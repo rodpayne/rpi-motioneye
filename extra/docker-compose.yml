@@ -2,13 +2,16 @@
 version: "3.5"
 services:
   motioneye:
-    image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
+    image: rodpayne/rpi-motioneye:dev-armhf  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
     ports:
       - "8081:8081"
+      - "8082:8082"
       - "8765:8765"
     volumes:
       - etc_motioneye:/etc/motioneye
       - var_lib_motioneye:/var/lib/motioneye
+    hostname: webpi-motioneye
+    container_name: motioneye
 
 volumes:
   etc_motioneye:
