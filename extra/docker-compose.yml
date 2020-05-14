@@ -10,9 +10,11 @@ services:
     volumes:
       - etc_motioneye:/etc/motioneye
       - var_lib_motioneye:/var/lib/motioneye
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
     hostname: webpi-motioneye
     container_name: motioneye
-
 volumes:
   etc_motioneye:
   var_lib_motioneye:
